@@ -1,0 +1,33 @@
+.box-login {
+  width: 350px;
+  height: 394px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 20%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.field-full-width {
+  width: 85%;
+}
+.container-login-logo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 85%;
+}
+.box-login-logo {
+  height: 85px;
+  width: 200px;
+  margin: 30px auto;
+}
+.container-login-logo > h3 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
