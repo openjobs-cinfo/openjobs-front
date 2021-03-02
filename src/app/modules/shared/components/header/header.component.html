@@ -1,11 +1,32 @@
 <div class="header-container">
-  <img class="header-logo" src="assets/images/openjobs.png" alt="Open Jobs" />
+  <a (click)="handleNavigateAuth()">
+    <img class="header-logo" src="assets/images/openjobs.png" alt="Open Jobs" />
+  </a>
 
-  <button
-    pButton
-    pRipple
-    type="button"
-    label="Sobre nós"
-    class="p-button-raised p-button-text"
-  ></button>
+  <div class="container-buttons">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Sobre nós"
+      class="p-button-raised p-button-text"
+      (click)="handleNavigateAboutUs()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Perfil"
+      class="p-button-raised p-button-text"
+      (click)="handleNavigateProfile()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Sair"
+      class="p-button-raised p-button-text"
+      (click)="handleNavigateAuth()"
+    ></button>
+  </div>
 </div>

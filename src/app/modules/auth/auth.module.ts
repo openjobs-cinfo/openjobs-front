@@ -10,11 +10,21 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SharedModule } from '../shared/shared.module';
+import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
+  },
+  {
+    path: 'recover-password',
+    component: RecoverPasswordComponent,
+  },
+  {
+    path: 'about',
+    component: AboutUsComponent,
   },
 ];
 
@@ -30,6 +40,6 @@ const routes: Routes = [
     ButtonModule,
     SharedModule,
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RecoverPasswordComponent, AboutUsComponent],
 })
 export class AuthModule {}

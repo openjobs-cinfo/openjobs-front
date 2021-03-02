@@ -9,4 +9,12 @@
 }
 .header-logo {
   height: 70px;
+  cursor: pointer;
+}
+
+.container-buttons {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
