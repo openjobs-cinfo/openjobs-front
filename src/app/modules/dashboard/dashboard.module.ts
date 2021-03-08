@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './shared/components/list/list.component';
 import { DataViewModule } from 'primeng/dataview';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -15,6 +16,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, ListComponent],
-  imports: [RouterModule.forChild(routes), CommonModule, DataViewModule],
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    DataViewModule,
+    SharedModule,
+  ],
 })
 export class DashboardModule {}
