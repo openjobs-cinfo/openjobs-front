@@ -22,7 +22,7 @@ export type ChartOptions = {
 };
 
 @Component({
-  selector: 'app-chart-pie',
+  selector: 'app-chart-pie', // TODO: mudar de chart-pie para pie-chart
   templateUrl: './chart-pie.component.html',
   styleUrls: ['./chart-pie.component.css'],
 })
@@ -31,7 +31,7 @@ export class ChartPieComponent implements OnInit {
   @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
-  title = 'Grafico de Pizza';
+  title = 'Vagas por tecnologias';
   pieChart: any;
 
   constructor() {

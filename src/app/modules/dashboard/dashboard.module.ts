@@ -6,6 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './shared/components/list/list.component';
 import { DataViewModule } from 'primeng/dataview';
 import { SharedModule } from '../shared/shared.module';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { PaginatorModule } from 'primeng/paginator';
 
 const routes: Routes = [
   {
@@ -21,6 +24,9 @@ const routes: Routes = [
     CommonModule,
     DataViewModule,
     SharedModule,
+    DropdownModule,
+    InputTextModule,
+    PaginatorModule,
   ],
 })
 export class DashboardModule {}
