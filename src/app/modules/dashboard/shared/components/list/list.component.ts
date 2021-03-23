@@ -15,6 +15,8 @@ export class ListComponent implements OnInit {
 
   sortField: string;
 
+  sortKey: string;
+
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit() {
