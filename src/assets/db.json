@@ -1,0 +1,17 @@
+{
+  "auth": [
+    {
+      "password": "123456",
+      "email": "wja1@ifal.edu.br",
+      "token": "asfdshf.sfsfhkshjhsdjhgds.sanfhfhsdhj"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "wellici",
+      "password": "123456",
+      "email": "wja1@ifal.edu.br"
+    }
+  ]
+}

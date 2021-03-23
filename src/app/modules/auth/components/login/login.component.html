@@ -9,12 +9,24 @@
   </div>
   <div class="p-fluid field-full-width">
     <div class="p-field">
-      <input id="email" type="email" pInputText placeholder="E-mail" />
+      <input
+        id="email"
+        type="email"
+        pInputText
+        placeholder="E-mail"
+        [(ngModel)]="email"
+      />
     </div>
   </div>
   <div class="p-fluid field-full-width">
     <div class="p-field">
-      <input id="password" type="password" pInputText placeholder="Senha" />
+      <input
+        id="password"
+        type="password"
+        pInputText
+        placeholder="Senha"
+        [(ngModel)]="password"
+      />
     </div>
   </div>
   <button

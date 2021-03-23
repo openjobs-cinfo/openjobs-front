@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlToApi: 'http://localhost:3000',
+  urlToAuthenticate:
+    'https://dev-457931.okta.com/oauth2/aushd4c95QtFHsfWt4x6/v1/token',
 };
 
 /*

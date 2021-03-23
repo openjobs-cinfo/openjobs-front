@@ -12,6 +12,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SharedModule } from '../shared/shared.module';
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { AuthService } from 'src/app/shared/auth.service';
 
 const routes: Routes = [
   {
@@ -41,5 +42,6 @@ const routes: Routes = [
     SharedModule,
   ],
   declarations: [LoginComponent, RecoverPasswordComponent, AboutUsComponent],
+  providers: [AuthService],
 })
 export class AuthModule {}
