@@ -36,4 +36,24 @@
     class="field-full-width"
     (click)="handleLogin()"
   ></button>
+  <div class="container-buttons">
+    <button
+      pButton
+      type="button"
+      label="Esqueci minha senha"
+      class="p-button-link button-link-recover-password"
+      (click)="handleRecoverPassword()"
+    ></button>
+    <div class="container-button-register">
+      <h4>Não tem conta?</h4>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Cadastre-se"
+        class="p-button-raised p-button-text"
+        (click)="handleRegister()"
+      ></button>
+    </div>
+  </div>
 </div>

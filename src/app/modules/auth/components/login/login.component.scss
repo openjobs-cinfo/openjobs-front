@@ -1,6 +1,6 @@
 .box-login {
   width: 350px;
-  height: 394px;
+  height: 425px;
   background-color: #fff;
   margin: auto;
   margin-top: 15%;
@@ -30,4 +30,20 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 21px;
+}
+.container-buttons {
+  width: 85%;
+}
+.button-link-recover-password {
+  display: flex;
+  margin: auto;
+}
+.container-button-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    margin-left: 10px;
+  }
 }

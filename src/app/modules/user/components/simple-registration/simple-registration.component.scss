@@ -1,0 +1,37 @@
+.container {
+  width: 350px;
+  height: 480px;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 15%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.field-full-width {
+  width: 85%;
+}
+
+.container-label {
+  display: flex;
+  width: 85%;
+  margin-top: 10px;
+
+  h3 {
+    font-size: 18px;
+    color: #1b242c;
+  }
+}
+
+.button-black-github {
+  background-color: #1b242c;
+  border: none;
+  margin: 28px 0;
+
+  &:hover {
+    background-color: #414a53; // #414A53 #172028
+  }
+}

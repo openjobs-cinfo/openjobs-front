@@ -1,1 +1,67 @@
-<p>simple-registration works!</p>
+<div class="card p-shadow-2 container">
+  <div class="container-label">
+    <h3>Cadastre-se</h3>
+  </div>
+  <button
+    pButton
+    type="button"
+    label="Cadastre-se com o Github"
+    class="field-full-width button-black-github"
+    (click)="handleRegister()"
+  ></button>
+  <div class="p-fluid field-full-width">
+    <div class="p-field">
+      <label for="full-name">Nome completo</label>
+      <input
+        id="full-name"
+        type="text"
+        pInputText
+        placeholder="Digite seu nome"
+        [(ngModel)]="fullName"
+      />
+    </div>
+  </div>
+  <div class="p-fluid field-full-width">
+    <div class="p-field">
+      <label for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        pInputText
+        placeholder="Digite seu e-mail"
+        [(ngModel)]="email"
+      />
+    </div>
+  </div>
+  <div class="p-fluid field-full-width">
+    <div class="p-field">
+      <label for="password">Senha</label>
+      <input
+        id="password"
+        type="password"
+        pInputText
+        placeholder="Digite sua senha"
+        [(ngModel)]="password"
+      />
+    </div>
+  </div>
+  <div class="p-fluid field-full-width">
+    <div class="p-field">
+      <label for="confirm-password">Confirme sua senha</label>
+      <input
+        id="confirm-password"
+        type="password"
+        pInputText
+        placeholder="Confirme sua senha"
+        [(ngModel)]="confirmPassword"
+      />
+    </div>
+  </div>
+  <button
+    pButton
+    type="button"
+    label="Criar conta"
+    class="field-full-width"
+    (click)="handleRegister()"
+  ></button>
+</div>
