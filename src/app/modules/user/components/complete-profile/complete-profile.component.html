@@ -1,0 +1,44 @@
+<div class="card p-shadow-2 container">
+  <div class="container-label">
+    <h3>Complete o seu perfil</h3>
+  </div>
+
+  <p-multiSelect
+    [options]="likeInTheVacancies"
+    [(ngModel)]="selectedLikeInTheVacancies"
+    defaultLabel="Selecione"
+    optionLabel="name"
+    selectedItemsLabel="{0} items selected"
+  ></p-multiSelect>
+
+  <p-multiSelect
+    [options]="institutions"
+    [(ngModel)]="selectedInstitutions"
+    defaultLabel="Selecione a instituição de ensino"
+    optionLabel="name"
+    selectedItemsLabel="{0} items selected"
+    selectionLimit="1"
+  ></p-multiSelect>
+
+  <p-multiSelect
+    [options]="courses"
+    [(ngModel)]="selectedCourses"
+    defaultLabel="Selecione seu curso"
+    optionLabel="name"
+    selectedItemsLabel="{0} items selected"
+    selectionLimit="1"
+  ></p-multiSelect>
+
+  <p-multiSelect
+    [options]="periods"
+    [(ngModel)]="selectedPeriods"
+    defaultLabel="Selecione o seu periodo atual"
+    optionLabel="name"
+    selectedItemsLabel="{0} items selected"
+    selectionLimit="1"
+  ></p-multiSelect>
+  <div class="container-buttons">
+    <button pButton type="button" label="Pular" class=""></button>
+    <button pButton type="button" label="Continuar" class=""></button>
+  </div>
+</div>

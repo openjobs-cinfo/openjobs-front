@@ -17,6 +17,6 @@ export class SimpleRegistrationComponent implements OnInit {
   ngOnInit(): void {}
 
   public async handleRegister() {
-    this.route.navigateByUrl('/home');
+    this.route.navigateByUrl('/user/register/complete');
   }
 }

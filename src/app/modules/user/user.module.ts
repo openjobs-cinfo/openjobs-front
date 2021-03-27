@@ -5,15 +5,21 @@ import { FormsModule } from '@angular/forms';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 import { SimpleRegistrationComponent } from './components/simple-registration/simple-registration.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CompleteProfileComponent } from './components/complete-profile/complete-profile.component';
 
 const routes: Routes = [
   {
     path: 'register/simple',
     component: SimpleRegistrationComponent,
+  },
+  {
+    path: 'register/complete',
+    component: CompleteProfileComponent,
   },
   {
     path: 'profile',
@@ -22,7 +28,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [SimpleRegistrationComponent, ProfileComponent],
+  declarations: [
+    SimpleRegistrationComponent,
+    ProfileComponent,
+    CompleteProfileComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -30,6 +40,7 @@ const routes: Routes = [
     FormsModule,
     InputTextModule,
     ButtonModule,
+    MultiSelectModule,
   ],
 })
 export class UserModule {}
