@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-complete-profile',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complete-profile.component.scss'],
 })
 export class CompleteProfileComponent implements OnInit {
+  public zipCode: string;
+  public country: string;
+  public city: string;
+  public uf: string;
+  public street: string;
+  public houseNumber: string;
   public likeInTheVacancies = [
     {
       name: 'React',
@@ -63,7 +70,15 @@ export class CompleteProfileComponent implements OnInit {
   ];
   public selectedPeriods = [];
 
-  constructor() {}
+  constructor(private route: Router) {}
 
   ngOnInit(): void {}
+
+  public async handleContinueRegister() {
+    this.route.navigateByUrl('/home');
+  }
+
+  public async handleJump() {
+    this.route.navigateByUrl('/home');
+  }
 }

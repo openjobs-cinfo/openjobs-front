@@ -9,6 +9,7 @@
     defaultLabel="Selecione"
     optionLabel="name"
     selectedItemsLabel="{0} items selected"
+    class="select-item"
   ></p-multiSelect>
 
   <p-multiSelect
@@ -18,6 +19,7 @@
     optionLabel="name"
     selectedItemsLabel="{0} items selected"
     selectionLimit="1"
+    class="select-item"
   ></p-multiSelect>
 
   <p-multiSelect
@@ -27,6 +29,7 @@
     optionLabel="name"
     selectedItemsLabel="{0} items selected"
     selectionLimit="1"
+    class="select-item"
   ></p-multiSelect>
 
   <p-multiSelect
@@ -36,9 +39,69 @@
     optionLabel="name"
     selectedItemsLabel="{0} items selected"
     selectionLimit="1"
+    class="select-item"
   ></p-multiSelect>
+  <div class="container-address">
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="zipCode"
+      placeholder="CEP"
+      class="field-full"
+    />
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="country"
+      placeholder="País"
+      class="field-full"
+    />
+    <div>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="city"
+        placeholder="Cidade"
+        class="middle-field"
+      />
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="uf"
+        placeholder="UF"
+        class="small-field"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="street"
+        placeholder="Rua"
+        class="middle-field"
+      />
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="houseNumber"
+        placeholder="N°"
+        class="small-field"
+      />
+    </div>
+  </div>
   <div class="container-buttons">
-    <button pButton type="button" label="Pular" class=""></button>
-    <button pButton type="button" label="Continuar" class=""></button>
+    <button
+      pButton
+      type="button"
+      label="Pular"
+      class="p-button-raised p-button-text"
+      (click)="handleJump()"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Concluir cadastro"
+      (click)="handleContinueRegister()"
+    ></button>
   </div>
 </div>
