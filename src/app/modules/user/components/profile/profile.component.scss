@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin: 20px;
+  width: 97%;
+}
+.card-data-user {
+  width: 29%;
+}
+.container-configs {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 80vh;
+}
+
+.container-configs > .p-card-body {
+  height: 600px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 14px;
+}
+.img-profile {
+  width: 180px;
+}
+.container-data-user {
+  display: flex;
+  align-items: flex-start;
+  div {
+    height: 140px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 130px;
+}

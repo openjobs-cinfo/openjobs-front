@@ -1,1 +1,55 @@
-<p>profile works!</p>
+<div class="container">
+  <p-card class="card-data-user" [style]="{ height: '400px' }">
+    <h3 class="title">Olá usuário, como vai você?!</h3>
+    <div class="container-data-user">
+      <img
+        src="/assets/images/profile-2.png"
+        alt="Perfil"
+        class="img-profile"
+      />
+      <div>
+        <h3>Nome do usuario</h3>
+        <h3>idade</h3>
+        <h3>E-mail</h3>
+      </div>
+    </div>
+    <div class="container-buttons">
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Atualizar dados cadastrais"
+        class="p-button-raised"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Faça uma doação"
+        class="p-button-raised"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Sair da plataforma"
+        class="p-button-raised"
+      ></button>
+    </div>
+  </p-card>
+  <div class="container-configs">
+    <p-card>
+      <h3 class="title">
+        Seu perfil está incompleto! Para obter melhores vagas, complete o
+        preenchimento!
+      </h3>
+      <p-progressBar [value]="50"></p-progressBar>
+    </p-card>
+    <p-card
+      class="card-configs"
+      [style]="{ height: '700px', 'margin-top': '20px' }"
+    >
+      configurações do usuario
+    </p-card>
+  </div>
+</div>

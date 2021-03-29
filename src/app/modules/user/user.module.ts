@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { CardModule } from 'primeng/card';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 import { SimpleRegistrationComponent } from './components/simple-registration/simple-registration.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -41,6 +43,8 @@ const routes: Routes = [
     InputTextModule,
     ButtonModule,
     MultiSelectModule,
+    CardModule,
+    ProgressBarModule,
   ],
 })
 export class UserModule {}
