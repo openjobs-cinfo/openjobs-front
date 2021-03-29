@@ -1,7 +1,7 @@
 <div class="card">
   <p-dataView
     #dv
-    [value]="products"
+    [value]="items"
     [rows]="5"
     filterBy="name"
     [sortField]="sortField"
@@ -28,18 +28,23 @@
         </span>
       </div>
     </ng-template>
-    <ng-template let-product pTemplate="listItem">
-      <div class="p-col-12">
+    <ng-template let-item pTemplate="listItem">
+      <div class="p-col-12 container-item" (click)="handleClickItem(item)">
         <div class="product-list-item">
-          <img [src]="'assets/demo/' + product.image" [alt]="product.name" />
+          <img [src]="'assets/demo/' + item.image" [alt]="item.name" />
           <div class="product-list-detail">
-            <div class="product-name">{{ product.name }}</div>
-            <div class="product-description">{{ product.description }}</div>
+            <div class="product-name">{{ item.name }}</div>
+            <div class="product-description">{{ item.description }}</div>
             <i class="pi pi-tag product-category-icon"></i
-            ><span class="product-category">{{ product.category }}</span>
+            ><span class="product-category">{{ item.category }}</span>
           </div>
         </div>
       </div>
+      <app-modal-item
+        [title]="item.name"
+        [display]="item.display"
+        [description]="item.description"
+      ></app-modal-item>
     </ng-template>
   </p-dataView>
 </div>

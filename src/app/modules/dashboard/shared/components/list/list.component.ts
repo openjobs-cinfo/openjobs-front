@@ -7,7 +7,7 @@ import { LazyLoadEvent, PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  products: any;
+  items: any[];
 
   sortOptions: any[];
 
@@ -17,12 +17,13 @@ export class ListComponent implements OnInit {
 
   sortKey: string;
 
+  displayModal: boolean = false;
+
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit() {
-    this.getProducts().then((data) => {
-      console.log('my data', data);
-      this.products = data;
+    this.getItems().then((data: any[]) => {
+      this.items = data;
     });
 
     this.sortOptions = [
@@ -97,13 +98,13 @@ export class ListComponent implements OnInit {
     return product;
   }
 
-  getProducts() {
+  getItems() {
     return new Promise((resolve) => {
       resolve([
         {
           category: 'Developer',
-          code: 'f230fh0g3',
-          description: 'Descrição da vaga aqui...',
+          code: 'f230fh1g3',
+          description: 'Descrição da vaga aqui 0...',
           id: '1000',
           image: 'logo-google.png',
           inventoryStatus: 'INSTOCK',
@@ -111,42 +112,46 @@ export class ListComponent implements OnInit {
           price: 65,
           quantity: 24,
           rating: 5,
+          display: false,
         },
         {
           category: 'Developer',
-          code: 'f230fh0g3',
-          description: 'Descrição da vaga aqui...',
-          id: '1000',
+          code: 'f230fh4g3',
+          description: 'Descrição da vaga aqui 1...',
+          id: '1001',
           image: 'logo-handtalk.png',
           inventoryStatus: 'INSTOCK',
           name: 'Vaga para desenvolvedor',
           price: 65,
           quantity: 24,
           rating: 5,
+          display: false,
         },
         {
           category: 'Softwer Enginer',
-          code: 'f230fh0g3',
-          description: 'Descrição da vaga aqui...',
-          id: '1000',
+          code: 'f230fh8g3',
+          description: 'Descrição da vaga aqui 2...',
+          id: '1002',
           image: 'logo-peps.png',
           inventoryStatus: 'INSTOCK',
           name: 'Vaga para engenheiro de software',
           price: 65,
           quantity: 24,
           rating: 5,
+          display: false,
         },
         {
           category: 'Softwer Enginer',
-          code: 'f230fh0g3',
-          description: 'Descrição da vaga aqui...',
-          id: '1000',
+          code: 'f230fh6g3',
+          description: 'Descrição da vaga aqui 3...',
+          id: '1003',
           image: 'logo-google.png',
           inventoryStatus: 'INSTOCK',
           name: 'Vaga para engenheiro de software',
           price: 65,
           quantity: 24,
           rating: 5,
+          display: false,
         },
       ]);
     });
@@ -182,5 +187,20 @@ export class ListComponent implements OnInit {
 
   generateRating() {
     return Math.floor(Math.random() * Math.floor(5) + 1);
+  }
+
+  public async handleClickItem(item: any) {
+    console.log(item);
+    const indexOfItem = this.items.findIndex((i) => i.code === item.code);
+    console.log('index', indexOfItem);
+    this.items = this.items.map((i, index) => {
+      if (index === indexOfItem) {
+        return {
+          ...i,
+          display: !i.display,
+        };
+      }
+      return i;
+    });
   }
 }

@@ -1,0 +1,11 @@
+<p-dialog [header]="title" [(visible)]="display" [style]="{ width: '60vw' }">
+  {{ description }}
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="displayBasic2 = false"
+      label="Mostrar detalhes"
+      class="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
