@@ -19,21 +19,21 @@
         pRipple
         type="button"
         label="Atualizar dados cadastrais"
-        class="p-button-raised"
+        class="p-button-raised button-yellow"
       ></button>
       <button
         pButton
         pRipple
         type="button"
         label="Faça uma doação"
-        class="p-button-raised"
+        class="p-button-raised button-green"
       ></button>
       <button
         pButton
         pRipple
         type="button"
         label="Sair da plataforma"
-        class="p-button-raised"
+        class="p-button-raised button-red"
       ></button>
     </div>
   </p-card>
@@ -49,7 +49,136 @@
       class="card-configs"
       [style]="{ height: '700px', 'margin-top': '20px' }"
     >
-      configurações do usuario
+      <div class="container-configs">
+        <div class="container-configs-data-user">
+          <!-- <div>
+            <h3>Configurações dos dados cadastrais</h3>
+            <div class="p-field">
+              <label for="config-full-name">Nome completo</label>
+              <input
+                id="config-full-name"
+                type="text"
+                pInputText
+                placeholder="Digite seu nome"
+              />
+            </div>
+            <div class="p-field">
+              <label for="config-email">E-mail</label>
+              <input
+                id="config-email"
+                type="text"
+                pInputText
+                placeholder="Digite seu e-mail"
+              />
+            </div>
+            <div class="p-field">
+              <label for="config-passoword">Senha</label>
+              <input
+                id="config-passoword"
+                type="password"
+                pInputText
+                placeholder="Digite sua senha"
+              />
+            </div>
+            <div class="p-field">
+              <label for="config-confirm-passoword">Confirme sua senha</label>
+              <input
+                id="config-confirm-passoword"
+                type="password"
+                pInputText
+                placeholder="Confirme sua senha"
+              />
+            </div>
+          </div> -->
+          <!-- <div>
+            <h3>Endereço</h3>
+            <div class="container-address">
+              <input
+                type="text"
+                pInputText
+                placeholder="CEP"
+                class="field-full"
+              />
+              <input
+                type="text"
+                pInputText
+                placeholder="País"
+                class="field-full"
+              />
+              <div>
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="Cidade"
+                  class="middle-field"
+                />
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="UF"
+                  class="small-field"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="Rua"
+                  class="middle-field"
+                />
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="N°"
+                  class="small-field"
+                />
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="container-configs-formations">
+          <!-- <h3>Formações</h3>
+
+          <p-multiSelect
+            [options]="likeInTheVacancies"
+            [(ngModel)]="selectedLikeInTheVacancies"
+            defaultLabel="Selecione"
+            optionLabel="name"
+            selectedItemsLabel="{0} items selected"
+            class="select-item"
+          ></p-multiSelect>
+
+          <p-multiSelect
+            [options]="institutions"
+            [(ngModel)]="selectedInstitutions"
+            defaultLabel="Selecione a instituição de ensino"
+            optionLabel="name"
+            selectedItemsLabel="{0} items selected"
+            selectionLimit="1"
+            class="select-item"
+          ></p-multiSelect>
+
+          <p-multiSelect
+            [options]="courses"
+            [(ngModel)]="selectedCourses"
+            defaultLabel="Selecione seu curso"
+            optionLabel="name"
+            selectedItemsLabel="{0} items selected"
+            selectionLimit="1"
+            class="select-item"
+          ></p-multiSelect>
+
+          <p-multiSelect
+            [options]="periods"
+            [(ngModel)]="selectedPeriods"
+            defaultLabel="Selecione o seu periodo atual"
+            optionLabel="name"
+            selectedItemsLabel="{0} items selected"
+            selectionLimit="1"
+            class="select-item"
+          ></p-multiSelect> -->
+        </div>
+      </div>
     </p-card>
   </div>
 </div>
