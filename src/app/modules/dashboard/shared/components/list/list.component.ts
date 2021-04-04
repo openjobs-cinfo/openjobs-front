@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LazyLoadEvent, PrimeNGConfig } from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
+import { JobsService } from '../../services/jobs.service';
 
 @Component({
   selector: 'app-list',
@@ -19,13 +20,19 @@ export class ListComponent implements OnInit {
 
   displayModal: boolean = false;
 
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(
+    private primengConfig: PrimeNGConfig,
+    private jobsService: JobsService
+  ) {}
 
   ngOnInit() {
     this.getItems().then((data: any[]) => {
       this.items = data;
     });
 
+    this.jobsService.getJobs().subscribe((data) => {
+      console.log('JOBS HERE: ', data);
+    });
     this.sortOptions = [
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' },

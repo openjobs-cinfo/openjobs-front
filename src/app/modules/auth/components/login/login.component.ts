@@ -15,13 +15,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public async handleLogin() {
-    const result = await this.authService.authenticate(
-      this.email,
-      this.password
-    );
-    console.log('RESULTADO', result);
-    this.route.navigateByUrl('/home');
+  public handleLogin() {
+    this.authService
+      .authenticate(this.email, this.password)
+      .subscribe((data) => {
+        console.log('data', data);
+        this.route.navigateByUrl('/home');
+      });
   }
 
   public async handleRegister() {

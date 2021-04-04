@@ -37,7 +37,7 @@
       ></button>
     </div>
   </p-card>
-  <div class="container-configs">
+  <div class="container-rigth">
     <p-card>
       <h3 class="title">
         Seu perfil está incompleto! Para obter melhores vagas, complete o
@@ -47,136 +47,147 @@
     </p-card>
     <p-card
       class="card-configs"
-      [style]="{ height: '700px', 'margin-top': '20px' }"
+      [style]="{ height: '620px', 'margin-top': '20px' }"
     >
-      <div class="container-configs">
-        <div class="container-configs-data-user">
-          <!-- <div>
-            <h3>Configurações dos dados cadastrais</h3>
-            <div class="p-field">
-              <label for="config-full-name">Nome completo</label>
-              <input
-                id="config-full-name"
-                type="text"
-                pInputText
-                placeholder="Digite seu nome"
-              />
-            </div>
-            <div class="p-field">
-              <label for="config-email">E-mail</label>
-              <input
-                id="config-email"
-                type="text"
-                pInputText
-                placeholder="Digite seu e-mail"
-              />
-            </div>
-            <div class="p-field">
-              <label for="config-passoword">Senha</label>
-              <input
-                id="config-passoword"
-                type="password"
-                pInputText
-                placeholder="Digite sua senha"
-              />
-            </div>
-            <div class="p-field">
-              <label for="config-confirm-passoword">Confirme sua senha</label>
-              <input
-                id="config-confirm-passoword"
-                type="password"
-                pInputText
-                placeholder="Confirme sua senha"
-              />
-            </div>
-          </div> -->
-          <!-- <div>
-            <h3>Endereço</h3>
-            <div class="container-address">
-              <input
-                type="text"
-                pInputText
-                placeholder="CEP"
-                class="field-full"
-              />
-              <input
-                type="text"
-                pInputText
-                placeholder="País"
-                class="field-full"
-              />
-              <div>
+      <div class="container-body">
+        <div class="container-configs">
+          <div class="container-configs-data-user">
+            <div>
+              <h3>Configurações dos dados cadastrais</h3>
+              <div class="p-field">
+                <label for="config-full-name">Nome completo</label>
                 <input
+                  id="config-full-name"
                   type="text"
                   pInputText
-                  placeholder="Cidade"
-                  class="middle-field"
-                />
-                <input
-                  type="text"
-                  pInputText
-                  placeholder="UF"
-                  class="small-field"
+                  placeholder="Digite seu nome"
+                  class="field-full"
                 />
               </div>
-              <div>
+              <div class="p-field">
+                <label for="config-email">E-mail</label>
                 <input
+                  id="config-email"
                   type="text"
                   pInputText
-                  placeholder="Rua"
-                  class="middle-field"
+                  placeholder="Digite seu e-mail"
+                  class="field-full"
                 />
+              </div>
+              <div class="p-field">
+                <label for="config-passoword">Senha</label>
                 <input
-                  type="text"
+                  id="config-passoword"
+                  type="password"
                   pInputText
-                  placeholder="N°"
-                  class="small-field"
+                  placeholder="Digite sua senha"
+                  class="field-full"
+                />
+              </div>
+              <div class="p-field">
+                <label for="config-confirm-passoword">Confirme sua senha</label>
+                <input
+                  id="config-confirm-passoword"
+                  type="password"
+                  pInputText
+                  placeholder="Confirme sua senha"
+                  class="field-full"
                 />
               </div>
             </div>
-          </div> -->
+            <div>
+              <h3>Endereço</h3>
+              <div class="container-address">
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="CEP"
+                  class="field-full"
+                />
+                <input
+                  type="text"
+                  pInputText
+                  placeholder="País"
+                  class="field-full"
+                />
+                <div>
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Cidade"
+                    class="middle-field"
+                  />
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="UF"
+                    class="small-field"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Rua"
+                    class="middle-field"
+                  />
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="N°"
+                    class="small-field"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-configs-formations">
+            <h3>Formações</h3>
+
+            <p-multiSelect
+              [options]="institutions"
+              [(ngModel)]="selectedInstitutions"
+              defaultLabel="Selecione a instituição de ensino"
+              optionLabel="name"
+              selectedItemsLabel="{0} items selected"
+              selectionLimit="1"
+              class="select-item"
+            ></p-multiSelect>
+
+            <p-multiSelect
+              [options]="courses"
+              [(ngModel)]="selectedCourses"
+              defaultLabel="Selecione seu curso"
+              optionLabel="name"
+              selectedItemsLabel="{0} items selected"
+              selectionLimit="1"
+              class="select-item"
+            ></p-multiSelect>
+
+            <p-multiSelect
+              [options]="periods"
+              [(ngModel)]="selectedPeriods"
+              defaultLabel="Selecione o seu periodo atual"
+              optionLabel="name"
+              selectedItemsLabel="{0} items selected"
+              selectionLimit="1"
+              class="select-item"
+            ></p-multiSelect>
+
+            <h3>Selecione tudo que você gostaria de ver nas vagas:</h3>
+
+            <p-multiSelect
+              [options]="likeInTheVacancies"
+              [(ngModel)]="selectedLikeInTheVacancies"
+              defaultLabel="Selecione o que gostaria que tivesse nas vagas"
+              optionLabel="name"
+              selectedItemsLabel="{0} items selected"
+              class="select-item"
+            ></p-multiSelect>
+          </div>
         </div>
-        <div class="container-configs-formations">
-          <!-- <h3>Formações</h3>
-
-          <p-multiSelect
-            [options]="likeInTheVacancies"
-            [(ngModel)]="selectedLikeInTheVacancies"
-            defaultLabel="Selecione"
-            optionLabel="name"
-            selectedItemsLabel="{0} items selected"
-            class="select-item"
-          ></p-multiSelect>
-
-          <p-multiSelect
-            [options]="institutions"
-            [(ngModel)]="selectedInstitutions"
-            defaultLabel="Selecione a instituição de ensino"
-            optionLabel="name"
-            selectedItemsLabel="{0} items selected"
-            selectionLimit="1"
-            class="select-item"
-          ></p-multiSelect>
-
-          <p-multiSelect
-            [options]="courses"
-            [(ngModel)]="selectedCourses"
-            defaultLabel="Selecione seu curso"
-            optionLabel="name"
-            selectedItemsLabel="{0} items selected"
-            selectionLimit="1"
-            class="select-item"
-          ></p-multiSelect>
-
-          <p-multiSelect
-            [options]="periods"
-            [(ngModel)]="selectedPeriods"
-            defaultLabel="Selecione o seu periodo atual"
-            optionLabel="name"
-            selectedItemsLabel="{0} items selected"
-            selectionLimit="1"
-            class="select-item"
-          ></p-multiSelect> -->
+        <div class="continer-actions-buttons">
+          <button pButton type="button" label="Atualizar cadastro"></button>
         </div>
       </div>
     </p-card>

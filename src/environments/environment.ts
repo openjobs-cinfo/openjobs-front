@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  urlToApi: 'http://localhost:3000',
-  urlToAuthenticate:
-    'https://dev-457931.okta.com/oauth2/aushd4c95QtFHsfWt4x6/v1/token',
+  urlToApi: 'https://openjobs-cinfo.herokuapp.com/api',
+  urlToAuthenticate: 'https://openjobs-cinfo.herokuapp.com/api/auth/jwt/create',
 };
 
 /*

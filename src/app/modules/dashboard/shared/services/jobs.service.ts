@@ -1,25 +1,18 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
-interface OAuth {
-  refresh: string;
-  access: string;
-}
+import { Job } from 'src/app/shared/models/Job';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class JobsService {
   constructor(private httpClient: HttpClient) {}
 
-  public authenticate(email: string, password: string): Observable<OAuth> {
+  public getJobs(): Observable<Job[]> {
     return this.httpClient
-      .post<OAuth>('@openjobs-api/auth', {
-        email,
-        password,
-      })
+      .get<Job[]>('@openjobs-api')
       .pipe(retry(1), catchError(this.processError));
   }
 
