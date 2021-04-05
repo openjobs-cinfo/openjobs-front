@@ -10,10 +10,9 @@ import { Job } from 'src/app/shared/models/Job';
 export class JobsService {
   constructor(private httpClient: HttpClient) {}
 
-  public getJobs(): Observable<Job[]> {
-    return this.httpClient
-      .get<Job[]>('@openjobs-api')
-      .pipe(retry(1), catchError(this.processError));
+  public getJobs(): Promise<Job[]> {
+    return this.httpClient.get<Job[]>('@openjobs-api/jobs').toPromise();
+    // .pipe(retry(1), catchError(this.processError));
   }
 
   private processError(err) {

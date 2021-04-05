@@ -28,16 +28,25 @@ export class GlobalService implements HttpInterceptor {
     if (!this.authService) {
       this.authService = this.injector.get(AuthService);
     }
-    if (req.url.indexOf('@openjobs-api') !== -1) {
-      url = req.url.replace('@openjobs-api', environment.urlToApi);
-    }
-    if (req.url.indexOf('@openjobs-api/auth') !== -1) {
+
+    const oAuthData = this.authService.oAuthData.value;
+
+    if (req.url.indexOf('@openjobs-api-oauth') !== -1) {
       url = req.url.replace(
-        '@openjobs-api/auth',
+        '@openjobs-api-oauth',
         environment.urlToAuthenticate
       );
+    } else if (req.url.indexOf('@openjobs-api') !== -1) {
+      url = req.url.replace('@openjobs-api', environment.urlToApi);
     }
 
+    console.log('OAuthData', this.authService.oAuthData.value);
+    if (oAuthData) {
+      headers = {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + oAuthData['access'],
+      };
+    }
     cloneRequest = req.clone({
       url,
       setHeaders: headers,

@@ -30,9 +30,9 @@ export class ListComponent implements OnInit {
       this.items = data;
     });
 
-    this.jobsService.getJobs().subscribe((data) => {
-      console.log('JOBS HERE: ', data);
-    });
+    // this.jobsService.getJobs().then((data) => {
+    //   console.log('JOBS HERE: ', data);
+    // });
     this.sortOptions = [
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' },

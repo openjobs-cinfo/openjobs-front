@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  urlToApi: 'https://openjobs-cinfo.herokuapp.com/api',
-  urlToAuthenticate: 'https://openjobs-cinfo.herokuapp.com/api/auth/jwt/create',
+  urlToApi: 'http://openjobs-cinfo.herokuapp.com/api',
+  urlToAuthenticate: 'http://openjobs-cinfo.herokuapp.com/api/auth/jwt/create',
 };
 
 /*
