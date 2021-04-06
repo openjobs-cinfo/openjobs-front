@@ -7,13 +7,14 @@
     class="container-buttons"
     [class.justify_initial]="!authService.userAuthenticated.value"
   >
+    {{ message }}
     <button
       pButton
       pRipple
       type="button"
       label="Sobre nós"
       class="p-button-raised p-button-text"
-      (click)="handleNavigateAboutUs()"
+      (click)="updateUser()"
       *ngIf="!authService.userAuthenticated.value"
     ></button>
     <button
@@ -23,7 +24,7 @@
       label="Perfil"
       class="p-button-raised p-button-text"
       (click)="handleNavigateProfile()"
-      *ngIf="authService.userAuthenticated.value"
+      *ngIf="authService.usD"
     ></button>
     <button
       pButton
@@ -32,7 +33,7 @@
       label="Sair"
       class="p-button-raised p-button-text"
       (click)="handleNavigateAuth()"
-      *ngIf="authService.userAuthenticated.value"
+      *ngIf="authService.usD"
     ></button>
   </div>
 </div>

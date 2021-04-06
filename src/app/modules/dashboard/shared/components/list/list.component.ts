@@ -26,13 +26,14 @@ export class ListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getItems().then((data: any[]) => {
-      this.items = data;
-    });
-
-    // this.jobsService.getJobs().then((data) => {
-    //   console.log('JOBS HERE: ', data);
+    // this.getItems().then((data: any[]) => {
+    //   this.items = data;
     // });
+
+    this.jobsService.getJobs(1, 5).then((data) => {
+      console.log('JOBS HERE: ', data);
+      this.items = data.results;
+    });
     this.sortOptions = [
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' },

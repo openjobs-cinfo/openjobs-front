@@ -31,12 +31,18 @@
     <ng-template let-item pTemplate="listItem">
       <div class="p-col-12 container-item" (click)="handleClickItem(item)">
         <div class="product-list-item">
-          <img [src]="'assets/demo/' + item.image" [alt]="item.name" />
+          <img [src]="'assets/images/jobs-default.jpeg'" [alt]="item.name" />
           <div class="product-list-detail">
             <div class="product-name">{{ item.name }}</div>
             <div class="product-description">{{ item.description }}</div>
-            <i class="pi pi-tag product-category-icon"></i
-            ><span class="product-category">{{ item.category }}</span>
+            <div>
+              <p-chip
+                *ngFor="let skill of item.skills"
+                [label]="skill"
+                styleClass="p-mr-2 custom-chip"
+              ></p-chip>
+            </div>
+            <span class="product-category">{{ item.category }}</span>
           </div>
         </div>
       </div>

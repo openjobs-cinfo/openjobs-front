@@ -37,10 +37,12 @@ export class GlobalService implements HttpInterceptor {
         environment.urlToAuthenticate
       );
     } else if (req.url.indexOf('@openjobs-api') !== -1) {
+      console.log('REQ_URL', req.url);
       url = req.url.replace('@openjobs-api', environment.urlToApi);
+      console.log('URL', url);
     }
 
-    console.log('OAuthData', this.authService.oAuthData.value);
+    console.log('OAuthData', oAuthData);
     if (oAuthData) {
       headers = {
         'Content-Type': 'application/json',

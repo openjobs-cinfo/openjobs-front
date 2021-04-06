@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ChipModule } from 'primeng/chip';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './shared/components/list/list.component';
 import { DataViewModule } from 'primeng/dataview';
@@ -27,6 +28,7 @@ const routes: Routes = [
     DropdownModule,
     InputTextModule,
     PaginatorModule,
+    ChipModule,
   ],
 })
 export class DashboardModule {}
