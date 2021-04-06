@@ -3,10 +3,7 @@
     <img class="header-logo" src="assets/images/openjobs.png" alt="Open Jobs" />
   </a>
 
-  <div
-    class="container-buttons"
-    [class.justify_initial]="!authService.userAuthenticated.value"
-  >
+  <div class="container-buttons">
     {{ message }}
     <button
       pButton
@@ -15,7 +12,6 @@
       label="Sobre nós"
       class="p-button-raised p-button-text"
       (click)="updateUser()"
-      *ngIf="!authService.userAuthenticated.value"
     ></button>
     <button
       pButton
@@ -24,7 +20,6 @@
       label="Perfil"
       class="p-button-raised p-button-text"
       (click)="handleNavigateProfile()"
-      *ngIf="authService.usD"
     ></button>
     <button
       pButton
@@ -33,7 +28,6 @@
       label="Sair"
       class="p-button-raised p-button-text"
       (click)="handleNavigateAuth()"
-      *ngIf="authService.usD"
     ></button>
   </div>
 </div>
