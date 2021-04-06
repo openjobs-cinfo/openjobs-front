@@ -11,17 +11,18 @@ export class LoginComponent implements OnInit {
   public email: string;
   public password: string;
 
-  constructor(private route: Router, private authService: AuthService) {}
+  constructor(private route: Router, public authService: AuthService) {}
 
   ngOnInit(): void {}
 
   public async handleLogin() {
-    try {
-      await this.authService.authenticate(this.email, this.password);
+    const authenticated = await this.authService.authenticate(
+      this.email,
+      this.password
+    );
 
+    if (authenticated) {
       this.route.navigateByUrl('/home');
-    } catch (error) {
-      console.log('ERRO: ', error);
     }
   }
 

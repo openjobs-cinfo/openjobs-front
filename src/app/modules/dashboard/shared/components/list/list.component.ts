@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
     // });
 
     this.jobsService.getJobs(1, 5).then((data) => {
-      console.log('JOBS HERE: ', data);
+      // console.log('JOBS HERE: ', data);
       this.items = data.results;
     });
     this.sortOptions = [
@@ -210,5 +210,12 @@ export class ListComponent implements OnInit {
       }
       return i;
     });
+  }
+
+  public async paginate(event) {
+    console.log('my event', event);
+    const { page } = event;
+    const data = await this.jobsService.getJobs(page + 1, 5);
+    this.items = data.results;
   }
 }

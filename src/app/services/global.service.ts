@@ -41,12 +41,18 @@ export class GlobalService implements HttpInterceptor {
       url = req.url.replace('@openjobs-api', environment.urlToApi);
       console.log('URL', url);
     }
+    const authData = JSON.parse(sessionStorage.getItem('user_token'));
 
     console.log('OAuthData', oAuthData);
     if (oAuthData) {
       headers = {
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + oAuthData['access'],
+      };
+    } else if (authData) {
+      headers = {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + authData['access'],
       };
     }
     cloneRequest = req.clone({

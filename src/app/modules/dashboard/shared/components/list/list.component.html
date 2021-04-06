@@ -34,7 +34,7 @@
           <img [src]="'assets/images/jobs-default.jpeg'" [alt]="item.name" />
           <div class="product-list-detail">
             <div class="product-name">{{ item.name }}</div>
-            <div class="product-description">{{ item.description }}</div>
+            <div class="product-description">{{ item.title }}</div>
             <div>
               <p-chip
                 *ngFor="let skill of item.skills"
@@ -57,6 +57,7 @@
 
 <p-paginator
   [rows]="10"
-  [totalRecords]="120"
-  [rowsPerPageOptions]="[5, 10, 20]"
+  [totalRecords]="10000"
+  [rowsPerPageOptions]="[5, 10, 15, 20, 25, 30]"
+  (onPageChange)="paginate($event)"
 ></p-paginator>

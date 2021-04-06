@@ -88,7 +88,11 @@ export class HeaderComponent
   }
 
   handleNavigateHome() {
-    this.router.navigateByUrl('/home');
+    if (this.authService.userAuthenticated.value) {
+      this.router.navigateByUrl('/home');
+    } else {
+      this.router.navigateByUrl('/auth');
+    }
   }
 
   handleNavigateAuth() {

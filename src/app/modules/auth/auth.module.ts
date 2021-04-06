@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -40,6 +41,7 @@ const routes: Routes = [
     InputTextareaModule,
     ButtonModule,
     SharedModule,
+    ProgressSpinnerModule,
   ],
   declarations: [LoginComponent, RecoverPasswordComponent, AboutUsComponent],
   providers: [AuthService],

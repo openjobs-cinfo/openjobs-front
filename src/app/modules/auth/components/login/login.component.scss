@@ -47,3 +47,23 @@
     margin-left: 10px;
   }
 }
+@keyframes p-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #fff;
+    color: #fff;
+  }
+  40% {
+    stroke: #fff;
+    color: #fff;
+  }
+  66% {
+    stroke: #fff;
+    color: #fff;
+  }
+  80%,
+  90% {
+    stroke: #fff;
+    color: #fff;
+  }
+}

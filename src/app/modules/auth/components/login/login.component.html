@@ -32,10 +32,18 @@
   <button
     pButton
     type="button"
-    label="Entrar"
+    [label]="authService.loading.value ? ' ' : 'Entrar'"
     class="field-full-width"
     (click)="handleLogin()"
-  ></button>
+  >
+    <p-progressSpinner
+      *ngIf="authService.loading.value"
+      [style]="{ width: '20px', height: '20px', 'margin-left': '124px' }"
+      strokeWidth="10"
+      fill="#FFFFFF"
+      animationDuration=".5s"
+    ></p-progressSpinner>
+  </button>
   <div class="container-buttons">
     <button
       pButton

@@ -11,12 +11,15 @@ export class SimpleRegistrationComponent implements OnInit {
   public email: string;
   public password: string;
   public confirmPassword: string;
+  public terms: boolean;
 
   constructor(private route: Router) {}
 
   ngOnInit(): void {}
 
   public async handleRegister() {
-    this.route.navigateByUrl('/user/register/complete');
+    if (this.terms) {
+      this.route.navigateByUrl('/user/register/complete');
+    }
   }
 }

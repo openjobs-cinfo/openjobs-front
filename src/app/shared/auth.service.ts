@@ -19,6 +19,7 @@ export class AuthService {
   public user2 = new Subject();
   public us = new BehaviorSubject(null);
   public usD = this.us.asObservable();
+  public loading: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(private httpClient: HttpClient) {
     this.recoveryDataFromLocalStorage();
@@ -53,6 +54,7 @@ export class AuthService {
         .then((data) => {
           const response = data;
           this.setUserData(response);
+          this.userNew.emit(response);
           return res(response);
         })
         .catch((error) => {
@@ -96,22 +98,31 @@ export class AuthService {
     });
   }
 
-  public async authenticate(email: string, password: string): Promise<OAuth> {
-    const data = await this.httpClient
-      .post<OAuth>('@openjobs-api-oauth', {
-        email,
-        password,
-      })
-      .toPromise();
-    // const data = await this.requestFake(email, password);
+  public async authenticate(
+    email: string,
+    password: string
+  ): Promise<OAuth | null> {
+    this.loading.next(true);
+    try {
+      const data = await this.httpClient
+        .post<OAuth>('@openjobs-api-oauth', {
+          email,
+          password,
+        })
+        .toPromise();
+      // const data = await this.requestFake(email, password);
 
-    this.setAuthData(data);
-    this.oAuthData.next(data);
-    // await this.loadUserDataFromApi();
-    const me = await this.requestFakeMe();
-    console.log('REQUEST_ME', me);
-    this.changeUs(me);
-    return data;
+      this.setAuthData(data);
+      this.oAuthData.next(data);
+      await this.loadUserDataFromApi();
+
+      this.loading.next(false);
+      return data;
+    } catch {
+      return null;
+    } finally {
+      this.loading.next(false);
+    }
   }
 
   public logout(): void {
