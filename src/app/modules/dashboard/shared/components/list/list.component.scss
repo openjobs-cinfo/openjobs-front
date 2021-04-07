@@ -132,3 +132,10 @@
 .container-item {
   cursor: pointer;
 }
+
+.container-chips {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 40%;
+}

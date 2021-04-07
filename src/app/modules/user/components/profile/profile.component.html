@@ -8,9 +8,9 @@
         class="img-profile"
       />
       <div>
-        <h3>Nome do usuario</h3>
-        <h3>idade</h3>
-        <h3>E-mail</h3>
+        <h3>{{ authService.userAuthenticated.value?.name }}</h3>
+        <h3>{{ authService.userAuthenticated.value?.birth_date }}</h3>
+        <h3>{{ authService.userAuthenticated.value?.email }}</h3>
       </div>
     </div>
     <div class="container-buttons">

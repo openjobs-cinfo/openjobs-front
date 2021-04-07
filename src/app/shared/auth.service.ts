@@ -23,7 +23,6 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {
     this.recoveryDataFromLocalStorage();
-    console.log('OAUTH_DATA_CONSTRUCTOR', this.oAuthData.value);
   }
 
   public getUser2() {
@@ -171,7 +170,7 @@ export class AuthService {
     } else {
       message = `Error Code: ${err.status}\nMessage: ${err.message}`;
     }
-    console.log(message);
+    // console.log(message);
     return throwError(message);
   }
 }

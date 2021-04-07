@@ -10,11 +10,7 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.currentUser.subscribe((u) => {
-      console.log('CURRENT_USER', u);
-    });
-    this.authService.usD.subscribe((a) => {
-      console.log('DEU BOM 4?', a);
-    });
+    this.authService.currentUser.subscribe();
+    this.authService.usD.subscribe();
   }
 }

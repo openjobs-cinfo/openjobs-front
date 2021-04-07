@@ -35,10 +35,14 @@
           <div class="product-list-detail">
             <div class="product-name">{{ item.name }}</div>
             <div class="product-description">{{ item.title }}</div>
-            <div>
+            <div class="container-chips">
               <p-chip
                 *ngFor="let skill of item.skills"
-                [label]="skill"
+                [style]="{
+                  'background-color': '#' + skill?.color,
+                  color: '#fff'
+                }"
+                [label]="skill?.name"
                 styleClass="p-mr-2 custom-chip"
               ></p-chip>
             </div>
@@ -46,15 +50,37 @@
           </div>
         </div>
       </div>
-      <app-modal-item
-        [title]="item.name"
-        [display]="item.display"
-        [description]="item.description"
-      ></app-modal-item>
     </ng-template>
   </p-dataView>
 </div>
+<!-- <app-modal-item
+  [title]="dataModal?.name"
+  [display]="displayModal"
+  [description]="dataModal?.description"
+  [closeModal]="closeModal"
+></app-modal-item> -->
 
+<p-dialog
+  [header]="dataModal?.name"
+  [(visible)]="displayModal"
+  [style]="{ width: '60vw' }"
+  [closable]="true"
+  *ngIf="displayModal"
+>
+  <!-- {{ dataModal?.description }} -->
+
+  <markdown>
+    {{ dataModal?.description }}
+  </markdown>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="handleRedirect()"
+      label="Mostrar detalhes"
+      class="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
 <p-paginator
   [rows]="10"
   [totalRecords]="10000"

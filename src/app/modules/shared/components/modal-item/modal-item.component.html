@@ -1,5 +1,16 @@
-<p-dialog [header]="title" [(visible)]="display" [style]="{ width: '60vw' }">
+<p-dialog
+  [header]="title"
+  [(visible)]="display"
+  [style]="{ width: '60vw' }"
+  (onHide)="onHide($event)"
+  [closable]="true"
+  *ngIf="display"
+>
   {{ description }}
+
+  <!-- <markdown>
+    {{ description }}
+  </markdown> -->
   <ng-template pTemplate="footer">
     <p-button
       icon="pi pi-check"

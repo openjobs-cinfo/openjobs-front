@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ButtonModule } from 'primeng/button';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { DialogModule } from 'primeng/dialog';
+import { MarkdownModule } from 'ngx-markdown';
 import { ChipModule } from 'primeng/chip';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './shared/components/list/list.component';
@@ -29,6 +33,10 @@ const routes: Routes = [
     InputTextModule,
     PaginatorModule,
     ChipModule,
+    MarkdownModule.forRoot(),
+    DialogModule,
+    ButtonModule,
+    NgApexchartsModule,
   ],
 })
 export class DashboardModule {}

@@ -10,6 +10,8 @@ import { JobsService } from '../../services/jobs.service';
 export class ListComponent implements OnInit {
   items: any[];
 
+  dataModal: any;
+
   sortOptions: any[];
 
   sortOrder: number;
@@ -198,22 +200,16 @@ export class ListComponent implements OnInit {
   }
 
   public async handleClickItem(item: any) {
-    console.log(item);
-    const indexOfItem = this.items.findIndex((i) => i.code === item.code);
-    console.log('index', indexOfItem);
-    this.items = this.items.map((i, index) => {
-      if (index === indexOfItem) {
-        return {
-          ...i,
-          display: !i.display,
-        };
-      }
-      return i;
-    });
+    this.dataModal = item;
+    this.displayModal = true;
+  }
+
+  handleRedirect() {
+    const [, url] = this.dataModal.url.split('/repos');
+    window.open(`https://github.com${url}`, '_blank');
   }
 
   public async paginate(event) {
-    console.log('my event', event);
     const { page } = event;
     const data = await this.jobsService.getJobs(page + 1, 5);
     this.items = data.results;

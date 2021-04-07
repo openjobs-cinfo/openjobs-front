@@ -10,10 +10,13 @@ export class ModalItemComponent implements OnInit {
   @Input('description') public description: string;
   @Input('link') public link: string;
   @Input('display') public display: boolean;
+  @Input('closeModal') public closeModal: any;
 
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('AQUI!!!');
-  }
+  ngOnInit(): void {}
+
+  onHide = (event) => {
+    this.closeModal();
+  };
 }

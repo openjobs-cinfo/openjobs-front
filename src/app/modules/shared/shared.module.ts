@@ -4,6 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { DialogModule } from 'primeng/dialog';
 
+import { MarkdownModule } from 'ngx-markdown';
 import { HeaderComponent } from './components/header/header.component';
 import { ChartEngineComponent } from './components/chart/chart-engine/chart-engine.component';
 import { ChartPieComponent } from './components/chart/charts/chart-pie/chart-pie.component';
@@ -18,7 +19,13 @@ import { ModalItemComponent } from './components/modal-item/modal-item.component
     BarChartComponent,
     ModalItemComponent,
   ],
-  imports: [CommonModule, ButtonModule, NgApexchartsModule, DialogModule],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    NgApexchartsModule,
+    DialogModule,
+    MarkdownModule.forRoot(),
+  ],
   exports: [
     HeaderComponent,
     ChartPieComponent,

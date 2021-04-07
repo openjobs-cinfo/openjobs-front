@@ -29,9 +29,7 @@ export class HeaderComponent
     private cdr: ChangeDetectorRef
   ) {
     this.userAuthenticated = authService.currentUser;
-    this.authService.usD.subscribe((a) => {
-      console.log('DEU BOM 3?', a);
-    });
+    this.authService.usD.subscribe();
   }
 
   ngOnDestroy() {
@@ -39,13 +37,8 @@ export class HeaderComponent
   }
 
   ngOnChanges() {
-    this.authService.userAuthenticated.subscribe((res) => {
-      console.log('subscribe do capeta, funciona porra', res);
-    });
-    console.log('VALOR MUDOU?', this.userAuthenticated);
-    this.authService.usD.subscribe((a) => {
-      console.log('DEU BOM 2?', a);
-    });
+    this.authService.userAuthenticated.subscribe();
+    this.authService.usD.subscribe();
   }
 
   ngAfterViewChecked() {
@@ -64,27 +57,16 @@ export class HeaderComponent
   // }
 
   ngOnInit(): void {
-    //  = !!this.authService.userAuthenticated.value;
     this.authService.currentUser.subscribe((user) => {
-      console.log('USER HERE', user);
       this.userAuthenticated = user;
     });
-    console.log(
-      'LOGA ESSA DESGRAÇA AQUIIII PORRAAA',
-      this.authService.userAuthenticated.value,
-      this.authService.oAuthData.value
-    );
     this.subscription = this.authService.getUser().subscribe((message) => {
       this.userAuthenticated = message;
-      console.log('menssagem aqaqqa', this.userAuthenticated);
     });
     this.userN = this.authService.getUser2().subscribe((m) => {
-      console.log('dafmsdfsdgdsgs', m);
       this.message = m;
     });
-    this.authService.usD.subscribe((a) => {
-      console.log('DEU BOM?', a);
-    });
+    this.authService.usD.subscribe((a) => {});
   }
 
   handleNavigateHome() {

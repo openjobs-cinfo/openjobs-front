@@ -10,6 +10,7 @@ import {
   ApexResponsive,
   ApexChart,
 } from 'ng-apexcharts';
+import { SharedService } from 'src/app/modules/shared/services/shared.service';
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -30,18 +31,21 @@ export class ChartPieComponent implements OnInit {
   @ViewChild('pieCanvas') pieCanvas;
   @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
+  public userSkills: any;
+  public percent: number[];
+  public labels: string[];
 
   title = 'Vagas por tecnologias';
   pieChart: any;
 
-  constructor() {
+  constructor(private sharedService: SharedService) {
     this.chartOptions = {
-      series: [15, 15, 30, 40],
+      series: [],
       chart: {
         width: '100%',
         type: 'pie',
       },
-      labels: ['Python', 'Java', 'SQL', 'ReactJs'],
+      labels: [],
       legend: {
         position: 'left',
       },
@@ -72,5 +76,15 @@ export class ChartPieComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    const data = await this.sharedService.getSkillPercents();
+
+    this.userSkills = data;
+    if (this.userSkills) {
+      this.percent = Object.values(this.userSkills);
+      this.labels = Object.keys(this.userSkills);
+      this.chartOptions.series = this.percent;
+      this.chartOptions.labels = this.labels;
+    }
+  }
 }
