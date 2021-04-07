@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -64,7 +65,15 @@ export class ProfileComponent implements OnInit {
   ];
   public selectedPeriods = [];
 
-  constructor(public authService: AuthService) {}
+  constructor(
+    private router: Router,
+    public authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
+
+  handleNavigateAuth() {
+    this.authService.logout();
+    this.router.navigateByUrl('/auth');
+  }
 }
