@@ -22,7 +22,7 @@ export class JobsService {
   ): Promise<ResponseJobsPagination<Job>> {
     return this.httpClient
       .get<ResponseJobsPagination<Job>>(
-        `@openjobs-api/jobs?page=${page}&page_size=${size}`
+        `@openjobs-api/auth/users/me/recommended_jobs?page=${page}&page_size=${size}`
       )
       .toPromise();
   }
